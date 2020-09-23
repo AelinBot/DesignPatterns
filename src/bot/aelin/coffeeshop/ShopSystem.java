@@ -1,31 +1,28 @@
 package bot.aelin.coffeeshop;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
-public class ShopSystem extends Observable {
+public class ShopSystem {
 
-    private ArrayList<Observer> baristas = new ArrayList<>();
+    private ArrayList<Barista> baristas = new ArrayList<>();
+    private ArrayList<CoffeeOrder> orders = new ArrayList<>();
 
     public void newOrder(CoffeeOrder coffeeOrder) {
-        String newOrder = coffeeOrder.getOrderName();
+        orders.add(coffeeOrder);
         notifyObservers(coffeeOrder.getOrderName());
     }
 
     public void notifyObservers(String coffeeOrder) {
-        for(Observer barista : baristas) {
-            barista.update(this, coffeeOrder);
+        for(Barista barista : baristas) {
+            barista.update(coffeeOrder);
         }
     }
 
-    @Override
-    public synchronized void addObserver(Observer o) {
+    public synchronized void addObserver(Barista o) {
         this.baristas.add(o);
     }
 
-    @Override
-    public synchronized void deleteObserver(Observer o) {
+    public synchronized void deleteObserver(Barista o) {
         this.baristas.remove(o);
     }
 
