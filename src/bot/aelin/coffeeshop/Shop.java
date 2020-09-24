@@ -6,15 +6,18 @@ public class Shop {
 
         ShopSystem shopSystem = new ShopSystem();
 
-        CoffeeOrder cappuccino = new CoffeeOrder("Cappuccino");
-        CoffeeOrder latte = new CoffeeOrder("Latte");
+        CoffeeOrder coffee = new CoffeeOrder();
+        coffee.coffee();
+
+        CoffeeOrder cupcake = new CoffeeOrder();
+        cupcake.cupcake();
 
         Barista Tomass = new Barista();
 
         shopSystem.addObserver(Tomass);
 
-        shopSystem.newOrder(cappuccino);
-        shopSystem.newOrder(latte);
+        shopSystem.newOrder(coffee);
+        shopSystem.newOrder(cupcake);
 
     }
 
