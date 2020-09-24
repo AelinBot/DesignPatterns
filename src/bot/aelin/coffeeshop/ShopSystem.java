@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class ShopSystem {
 
     private ArrayList<Barista> baristas = new ArrayList<>();
-    private ArrayList<CoffeeOrder> orders = new ArrayList<>();
+    private ArrayList<OrderBuilder> orders = new ArrayList<>();
 
-    public void newOrder(CoffeeOrder coffeeOrder) {
-        orders.add(coffeeOrder);
-        notifyObservers(coffeeOrder.order.toString());
+    public void newOrder(OrderBuilder orderBuilder) {
+        orders.add(orderBuilder);
+        notifyObservers(orderBuilder.toString());
     }
 
     public void notifyObservers(String coffeeOrder) {

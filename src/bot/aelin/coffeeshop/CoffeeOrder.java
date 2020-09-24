@@ -1,46 +1,78 @@
 package bot.aelin.coffeeshop;
 
-import java.util.ArrayList;
-import java.util.List;
+public class CoffeeOrder {
 
-public class CoffeeOrder implements Options {
+    private String paymentMethod;
+    private int price;
+    private String customer;
 
-    List<String> order = new ArrayList<>();
+    private String cake;
+    private String cupcake;
+    private String sandwich;
+    private String coffee;
+    private String tea;
 
-    public CoffeeOrder(List<String> order) {
-        this.order = order;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public CoffeeOrder() {
-
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    public List<String> getOrder() {
-        return order;
+    public int getPrice() {
+        return price;
     }
 
-    @Override
-    public void cake() {
-        order.add("Cake");
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    @Override
-    public void cupcake() {
-        order.add("Cupcake");
+    public String getCustomer() {
+        return customer;
     }
 
-    @Override
-    public void sandwich() {
-        order.add("Sandwich");
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
-    @Override
-    public void coffee() {
-        order.add("Coffee");
+    public String getCake() {
+        return cake;
     }
 
-    @Override
-    public void tea() {
-        order.add("Tea");
+    public void setCake(String cake) {
+        this.cake = cake;
+    }
+
+    public String getCupcake() {
+        return cupcake;
+    }
+
+    public void setCupcake(String cupcake) {
+        this.cupcake = cupcake;
+    }
+
+    public String getSandwich() {
+        return sandwich;
+    }
+
+    public void setSandwich(String sandwich) {
+        this.sandwich = sandwich;
+    }
+
+    public String getCoffee() {
+        return coffee;
+    }
+
+    public void setCoffee(String coffee) {
+        this.coffee = coffee;
+    }
+
+    public String getTea() {
+        return tea;
+    }
+
+    public void setTea(String tea) {
+        this.tea = tea;
     }
 }
