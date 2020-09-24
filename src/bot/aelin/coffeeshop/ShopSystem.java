@@ -9,7 +9,7 @@ public class ShopSystem {
 
     public void newOrder(OrderBuilder orderBuilder) {
         orders.add(orderBuilder);
-        notifyObservers(orderBuilder.toString());
+        notifyObservers(orderBuilder.build().toString());
     }
 
     public void notifyObservers(String coffeeOrder) {

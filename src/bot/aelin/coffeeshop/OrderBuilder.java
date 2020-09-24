@@ -12,17 +12,6 @@ public class OrderBuilder {
     private String coffee;
     private String tea;
 
-    @Override
-    public String toString() {
-        return "New order!\n" +
-                "Price of the order is: " + price + "\n" +
-                "Items:"+ "\n" + "Cake: " + cake +
-                " || Cupcake: " + cupcake +
-                " || Sandwich: " + sandwich +
-                " || Coffee: " + coffee +
-                " || Tea: " + tea + "\n";
-    }
-
     public CoffeeOrder build() {
         CoffeeOrder coffeeOrder = new CoffeeOrder();
         coffeeOrder.setPaymentMethod(this.paymentMethod);
